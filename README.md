@@ -20,4 +20,9 @@ node scripts/extract_events.js
 ```
 
 IMPORTANT:
-remember to copy to the backend both the json contract and the abigen
+remember to copy:
+
+JSON --> to backend
+JSON --> to frontend
+ABIGEN --> to backend
+events --> to backend
