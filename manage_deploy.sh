@@ -10,4 +10,4 @@ cp build/contracts/Subscription.json $HOME/Code/TradingLab/WebFront/src/function
 cp $HOME/Code/TradingLab/Contracts/abigenBindings/abi/Subscription.abi $HOME/Code/TradingLab/WebBack/contracts
 
 # Events to backend
-cp $HOME/Code/TradingLab/Contracts/scripts/subscription_events.json $HOME/Code/TradingLab/WebBack/contracts
+cp $HOME/Code/TradingLab/Contracts/scripts/subscription_info.json $HOME/Code/TradingLab/WebBack/contracts

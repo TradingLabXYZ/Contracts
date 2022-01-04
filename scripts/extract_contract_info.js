@@ -10,7 +10,7 @@ Subscription.deployed().then(
       event: value.constructor.events
     };
     let data = JSON.stringify(output);
-    fs.writeFile('./scripts/subscription_events.json', data, function(err) {
+    fs.writeFile('./scripts/subscription_info.json', data, function(err) {
       if (err) throw err;
       console.log('complete');
     })
