@@ -5,8 +5,14 @@ let Subscription = contract(artifacts);
 Subscription.setProvider('http://localhost:9933')
 Subscription.deployed().then(
   function(value) {
-    let events = value.constructor.events;
-    let data = JSON.stringify(events);
-    fs.writeFileSync('./scripts/subscription_events.json', data);
+    let output = {
+      contract: value.address,
+      event: value.constructor.events
+    };
+    let data = JSON.stringify(output);
+    fs.writeFile('./scripts/subscription_events.json', data, function(err) {
+      if (err) throw err;
+      console.log('complete');
+    })
   }
-);
+)
