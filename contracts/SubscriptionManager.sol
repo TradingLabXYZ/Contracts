@@ -9,17 +9,20 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-contract Subscription {
+contract SubscriptionManager {
 
   // STRUCTS
-  struct Subscriber { 
-    address To;
+  struct Subscription {
     uint Createdat;
+    uint Endedat;
+    uint Amount;
+    uint Months;
+    bool IsActive;
   }
 
   // VARIABLES
   mapping (address => uint) public plans;
-  mapping (address => Subscriber[]) public subscriptions;
+  mapping (address => mapping (address => Subscription)) public subscriptions;
 
   // EVENTS
   event ChangePlan(
@@ -35,6 +38,10 @@ contract Subscription {
   // TRANSACTIONS
   function changePlan(uint usdc_monthly_price) public {
     require(
+      msg.sender.balance > 0,
+      "Balance is not enough."
+    );
+    require(
       usdc_monthly_price > 0, 
       "USDC price must be bigger than 0."
     );
@@ -47,8 +54,15 @@ contract Subscription {
   }
 
   function subscribe(address to) public {
-    Subscriber memory subscriber = Subscriber(to, block.timestamp);
-    subscriptions[to].push(subscriber);
+    uint currentTimestamp = block.timestamp;
+    Subscription memory subscription = Subscription({
+      Createdat: currentTimestamp,
+      Endedat: currentTimestamp + (30 * 1 days),
+      Amount: plans[to],
+      Months: 1,
+      IsActive: true
+    });
+    subscriptions[to][msg.sender] = subscription;
     emit Subscribe(msg.sender, to);
   }
 
@@ -57,4 +71,7 @@ contract Subscription {
     return plans[msg.sender];
   }
 
+  function isSubscriber(address to) public view returns(bool) {
+    return subscriptions[to][msg.sender].IsActive;
+  }
 }
