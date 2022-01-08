@@ -1,9 +1,9 @@
 var fs = require('fs');
 const contract = require("truffle-contract");
-const artifacts = require('../build/contracts/SubscriptionManager.json')
-let SubscriptionManager = contract(artifacts);
-SubscriptionManager.setProvider('http://localhost:9933')
-SubscriptionManager.deployed().then(
+const artifacts = require('../build/contracts/SubscriptionModel.json')
+let SubscriptionModel = contract(artifacts);
+SubscriptionModel.setProvider('http://localhost:9933')
+SubscriptionModel.deployed().then(
   function(value) {
     let events = [];
     for (var event_id in value.constructor.events) {

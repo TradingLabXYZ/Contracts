@@ -9,15 +9,13 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
-contract SubscriptionManager {
+contract SubscriptionModel {
 
   // STRUCTS
   struct Subscription {
     uint Createdat;
     uint Endedat;
     uint Amount;
-    uint Months;
-    bool IsActive;
   }
 
   // VARIABLES
@@ -32,7 +30,10 @@ contract SubscriptionManager {
 
   event Subscribe(
     address sender,
-    address to
+    address to,
+    uint createdat,
+    uint endedat,
+    uint amount
   );
     
   // TRANSACTIONS
@@ -50,20 +51,36 @@ contract SubscriptionManager {
       "USDC price must be different than current one."
     );
     plans[msg.sender] = usdc_monthly_price; 
-    emit ChangePlan(msg.sender, usdc_monthly_price);
+    emit ChangePlan(
+      msg.sender,
+      usdc_monthly_price
+    );
   }
 
   function subscribe(address to) public {
     uint currentTimestamp = block.timestamp;
+    require(
+      plans[to] > 0,
+      "Address is not accepting subscriptions."
+    );
+    require(
+      subscriptions[to][msg.sender].Endedat < currentTimestamp,
+      "There is a running subscription"
+    );
+    uint endedat = currentTimestamp + (30 * 1 days);
     Subscription memory subscription = Subscription({
       Createdat: currentTimestamp,
       Endedat: currentTimestamp + (30 * 1 days),
-      Amount: plans[to],
-      Months: 1,
-      IsActive: true
+      Amount: plans[to]
     });
     subscriptions[to][msg.sender] = subscription;
-    emit Subscribe(msg.sender, to);
+    emit Subscribe(
+      msg.sender,
+      to,
+      currentTimestamp,
+      endedat,
+      plans[to]
+    );
   }
 
   // CALLS
@@ -72,6 +89,13 @@ contract SubscriptionManager {
   }
 
   function isSubscriber(address to) public view returns(bool) {
-    return subscriptions[to][msg.sender].IsActive;
+    uint currentTimestamp = block.timestamp;
+    uint endedat = subscriptions[to][msg.sender].Endedat;
+    return endedat > currentTimestamp;
   }
+
+  function subscriptionEndedAt(address to) public view returns(uint) {
+    return subscriptions[to][msg.sender].Endedat;
+  }
+
 }

@@ -1,5 +1,5 @@
-var Subscription = artifacts.require("Subscription");
+var SubscriptionModel = artifacts.require("SubscriptionModel");
 
 module.exports = function(deployer) {
-  deployer.deploy(Subscription);
+  deployer.deploy(SubscriptionModel);
 };
