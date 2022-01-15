@@ -1,11 +1,3 @@
-//  Possibility to subscribe
-//   get latest price is USD/MOON
-//   At the beginning subscription only monthly
-//   Check is already subscribed? 
-
-// Possibility to check if addressA is subscribed with addressB
-// Possibility to get list of all subscribers of a particular address
-
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.7;
 
@@ -35,6 +27,11 @@ contract SubscriptionModel {
     uint endedat,
     uint amount
   );
+
+  event Buy(
+    uint test,
+    uint value
+  );
     
   // TRANSACTIONS
   function changePlan(uint usdc_monthly_price) public {
@@ -57,7 +54,7 @@ contract SubscriptionModel {
     );
   }
 
-  function subscribe(address to) public {
+  function subscribe(address payable to) public payable {
     uint currentTimestamp = block.timestamp;
     require(
       plans[to] > 0,
@@ -81,6 +78,7 @@ contract SubscriptionModel {
       endedat,
       plans[to]
     );
+    to.transfer(msg.value);
   }
 
   // CALLS
