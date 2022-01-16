@@ -11,8 +11,19 @@ contract SubscriptionModel {
   }
 
   // VARIABLES
-  mapping (address => uint) public plans;
-  mapping (address => mapping (address => Subscription)) public subscriptions;
+
+  uint TLPERCENTAGE = 40;
+  address tlAddress = 0x71398cAD63b47Db2E2b00b68a709b64DF98E5A29;
+  address payable tlWallet = payable(tlAddress);
+
+  mapping (
+    address => uint
+  ) public plans;
+  
+  mapping (
+    address => mapping (
+      address => Subscription
+  )) public subscriptions;
 
   // EVENTS
   event ChangePlan(
@@ -26,11 +37,6 @@ contract SubscriptionModel {
     uint createdat,
     uint endedat,
     uint amount
-  );
-
-  event Buy(
-    uint test,
-    uint value
   );
     
   // TRANSACTIONS
@@ -78,7 +84,10 @@ contract SubscriptionModel {
       endedat,
       plans[to]
     );
-    to.transfer(msg.value);
+
+    uint valueTL = msg.value * 40 / 100;
+    tlWallet.transfer(valueTL);
+    to.transfer(msg.value - valueTL);
   }
 
   // CALLS
