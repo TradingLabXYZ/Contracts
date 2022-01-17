@@ -34,8 +34,7 @@ contract PlansStorage {
   modifier onCo() {
     require(
       msg.sender  == allowedContract,
-      "Not allowedContract.
-      ");
+      "Not allowedContract.");
     _;
   }
 
