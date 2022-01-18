@@ -5,8 +5,8 @@ contract PlansStorage {
 
   // STRUCTS
   struct Plan {
-    uint index;
-    uint value;
+    uint Index;
+    uint Value;
  }
 
   // MAPS
@@ -14,8 +14,8 @@ contract PlansStorage {
 
   // VARIABLES
   address owner;
-  address[] internal keyList;
   address allowedContract;
+  address[] internal keyList;
 
   // CONSTRUCTOR
   constructor ()  {
@@ -23,74 +23,69 @@ contract PlansStorage {
   }
 
   // MODIFIER
-  modifier onOw() {
+  modifier onAllow() {
     require(
-      msg.sender == owner,
-      "Not owner."
+      msg.sender == owner || msg.sender == allowedContract,
+      "Not allowed."
     );
     _;
   }
-
-  modifier onCo() {
-    require(
-      msg.sender  == allowedContract,
-      "Not allowedContract.");
-    _;
-  }
-
-  // FUNCTIONS CONTRACT
-  function getAllowedContract() public onOw view returns (address) {
-    return allowedContract;
-  }    
-
-  function updateAllowedContract(address _key) public onOw {
+  
+  // TRANSACTION CONTRACT
+  function updateAllowedContract(address _key) public onAllow {
     allowedContract = _key;
   }
 
-  // FUNCTION PLANS
-  function addPlan(address _key, uint _value) public onCo {
+  // CALL CONTRACT
+  function getAllowedContract() public onAllow view returns (address) {
+    return allowedContract;
+  }    
+
+  // TRANSACTIONS
+  function addPlan(address _key, uint _value) public onAllow {
     Plan storage plan = plans[_key];
-    plan.value = _value;
-    if(plan.index > 0) {
+    plan.Value = _value;
+    if(plan.Index > 0) {
       return;
     } else {
       keyList.push(_key);
       uint keyListIndex = keyList.length - 1;
-      plan.index = keyListIndex + 1;
+      plan.Index = keyListIndex + 1;
     }
   }
 
-  function removePlan(address _key) public onCo {
+  function removePlan(address _key) public onAllow {
     Plan storage plan = plans[_key];
-    require(plan.index != 0);
-    require(plan.index <= keyList.length);
-    uint keyListIndex = plan.index - 1;
+    require(plan.Index != 0);
+    require(plan.Index <= keyList.length);
+    uint keyListIndex = plan.Index - 1;
     uint keyListLastIndex = keyList.length - 1;
-    plans[keyList[keyListLastIndex]].index = keyListIndex + 1;
+    plans[keyList[keyListLastIndex]].Index = keyListIndex + 1;
     keyList[keyListIndex] = keyList[keyListLastIndex];
     keyList.pop();
     delete plans[_key];
   }
 
-  function sizePlans() public onCo view returns (uint) {
+  // CALLS
+  function sizePlans() public onAllow view returns (uint) {
     return uint(keyList.length);
   }
 
-  function containsPlan(address _key) public onCo view returns (bool) {
-    return plans[_key].index > 0;
+  function containsPlan(address _key) public onAllow view returns (bool) {
+    return plans[_key].Index > 0;
   }
 
-  function getPlanByAddress(address _key) public onCo view returns (uint) {
-    return plans[_key].value;
+  function getPlanByAddress(address _key) public onAllow view returns (uint) {
+    return plans[_key].Value;
   }
 
-  function getPlanByIndex(uint _index) public onCo view returns (uint) {
+  function getPlanByIndex(uint _index) public onAllow view returns (uint) {
     require(_index >= 0);
     require(_index < keyList.length);
-    return plans[keyList[_index]].value;
+    return plans[keyList[_index]].Value;
   }
 
-  function getPlans() public onCo view returns (address[] memory) {
+  function getPlans() public onAllow view returns (address[] memory) {
     return keyList;
   }
 }
