@@ -20,8 +20,7 @@ contract SubscriptionModel {
   event Subscribe(
     address sender,
     address to,
-    uint createdat,
-    uint weeks,
+    uint _weeks,
     uint amount
   );
 
@@ -79,7 +78,6 @@ contract SubscriptionModel {
     emit Subscribe(
       msg.sender,
       _to,
-      currentTimestamp,
       _weeks,
       plan
     );
