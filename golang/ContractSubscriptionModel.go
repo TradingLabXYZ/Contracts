@@ -1,7 +1,7 @@
 // Code generated - DO NOT EDIT.
 // This file is a generated binding and any manual changes will be lost.
 
-package subscriptionModel
+package main
 
 import (
 	"errors"
@@ -28,18 +28,10 @@ var (
 	_ = event.NewSubscription
 )
 
-// SubscriptionsStorageSubscription is an auto generated low-level Go binding around an user-defined struct.
-type SubscriptionsStorageSubscription struct {
-	Index     *big.Int
-	Createdat *big.Int
-	Endedat   *big.Int
-	Amount    *big.Int
-}
-
 // SubscriptionModelMetaData contains all meta data concerning the SubscriptionModel contract.
 var SubscriptionModelMetaData = &bind.MetaData{
-	ABI: "[{\"inputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_amount\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"_weeks\",\"type\":\"uint256\"}],\"name\":\"addSubscription\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getAllowedContract\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"}],\"name\":\"getCountSubscriptionsBySubscriptor\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_to\",\"type\":\"address\"}],\"name\":\"getSubscription\",\"outputs\":[{\"components\":[{\"internalType\":\"uint256\",\"name\":\"Index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Createdat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Endedat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Amount\",\"type\":\"uint256\"}],\"internalType\":\"structSubscriptionsStorage.Subscription\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getSubscriptors\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"sizeSubscriptions\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"subscriptions\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"Index\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Createdat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Endedat\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"Amount\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_key\",\"type\":\"address\"}],\"name\":\"updateAllowedContract\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}]",
-	Bin: "0x608060405234801561001057600080fd5b5033600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555061119c806100616000396000f3fe608060405234801561001057600080fd5b50600436106100885760003560e01c80639974db861161005b5780639974db861461012c578063c72adad81461015c578063c958a0a614610178578063d57648581461019657610088565b80630119cbb41461008d57806309225872146100ab5780635b75dd8d146100c95780636207d31b146100f9575b600080fd5b6100956101b2565b6040516100a29190610c8a565b60405180910390f35b6100b36102a7565b6040516100c09190610ce6565b60405180910390f35b6100e360048036038101906100de9190610d32565b6103b9565b6040516100f09190610dd6565b60405180910390f35b610113600480360381019061010e9190610d32565b61055f565b6040516101239493929190610df1565b60405180910390f35b61014660048036038101906101419190610e36565b61059c565b6040516101539190610c8a565b60405180910390f35b61017660048036038101906101719190610e36565b6106cd565b005b6101806107f9565b60405161018d9190610f21565b60405180910390f35b6101b060048036038101906101ab9190610f6f565b61096f565b005b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061025d5750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b61029c576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161029390611033565b60405180910390fd5b600480549050905090565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806103525750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610391576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161038890611033565b60405180910390fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16905090565b6103c1610c49565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16148061046a5750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b6104a9576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016104a090611033565b60405180910390fd5b6000808473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020604051806080016040529081600082015481526020016001820154815260200160028201548152602001600382015481525050905092915050565b6000602052816000526040600020602052806000526040600020600091509150508060000154908060010154908060020154908060030154905084565b6000600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806106475750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610686576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161067d90611033565b60405180910390fd5b600160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020549050919050565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806107765750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b6107b5576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016107ac90611033565b60405180910390fd5b80600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050565b6060600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff1614806108a45750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b6108e3576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016108da90611033565b60405180910390fd5b600480548060200260200160405190810160405280929190818152602001828054801561096557602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161091b575b5050505050905090565b600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff161480610a185750600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff163373ffffffffffffffffffffffffffffffffffffffff16145b610a57576040517f08c379a0000000000000000000000000000000000000000000000000000000008152600401610a4e90611033565b60405180910390fd5b60008060008673ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000209050600042905080826001018190555062093a8083610af39190611082565b81610afe91906110dc565b8260020181905550838260030181905550600082600001541115610b23575050610c43565b6004869080600181540180825580915050600190039060005260206000200160009091909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060006001600480549050610b9a9190611132565b9050600181610ba991906110dc565b836000018190555060018060008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054610bfc91906110dc565b600160008973ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055505050505b50505050565b6040518060800160405280600081526020016000815260200160008152602001600081525090565b6000819050919050565b610c8481610c71565b82525050565b6000602082019050610c9f6000830184610c7b565b92915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000610cd082610ca5565b9050919050565b610ce081610cc5565b82525050565b6000602082019050610cfb6000830184610cd7565b92915050565b600080fd5b610d0f81610cc5565b8114610d1a57600080fd5b50565b600081359050610d2c81610d06565b92915050565b60008060408385031215610d4957610d48610d01565b5b6000610d5785828601610d1d565b9250506020610d6885828601610d1d565b9150509250929050565b610d7b81610c71565b82525050565b608082016000820151610d976000850182610d72565b506020820151610daa6020850182610d72565b506040820151610dbd6040850182610d72565b506060820151610dd06060850182610d72565b50505050565b6000608082019050610deb6000830184610d81565b92915050565b6000608082019050610e066000830187610c7b565b610e136020830186610c7b565b610e206040830185610c7b565b610e2d6060830184610c7b565b95945050505050565b600060208284031215610e4c57610e4b610d01565b5b6000610e5a84828501610d1d565b91505092915050565b600081519050919050565b600082825260208201905092915050565b6000819050602082019050919050565b610e9881610cc5565b82525050565b6000610eaa8383610e8f565b60208301905092915050565b6000602082019050919050565b6000610ece82610e63565b610ed88185610e6e565b9350610ee383610e7f565b8060005b83811015610f14578151610efb8882610e9e565b9750610f0683610eb6565b925050600181019050610ee7565b5085935050505092915050565b60006020820190508181036000830152610f3b8184610ec3565b905092915050565b610f4c81610c71565b8114610f5757600080fd5b50565b600081359050610f6981610f43565b92915050565b60008060008060808587031215610f8957610f88610d01565b5b6000610f9787828801610d1d565b9450506020610fa887828801610d1d565b9350506040610fb987828801610f5a565b9250506060610fca87828801610f5a565b91505092959194509250565b600082825260208201905092915050565b7f4e6f7420616c6c6f7765642e0000000000000000000000000000000000000000600082015250565b600061101d600c83610fd6565b915061102882610fe7565b602082019050919050565b6000602082019050818103600083015261104c81611010565b9050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b600061108d82610c71565b915061109883610c71565b9250817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff04831182151516156110d1576110d0611053565b5b828202905092915050565b60006110e782610c71565b91506110f283610c71565b9250827fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0382111561112757611126611053565b5b828201905092915050565b600061113d82610c71565b915061114883610c71565b92508282101561115b5761115a611053565b5b82820390509291505056fea26469706673582212207fb8372857e9b2fb41995f3f930c1cc4aea2f381717a5e65d17be2e37c960f4864736f6c634300080b0033",
+	ABI: "[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"_subscriptionStorageAddress\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"_planStorageAddress\",\"type\":\"address\"}],\"stateMutability\":\"nonpayable\",\"type\":\"constructor\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"ChangePlan\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"_weeks\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"Subscribe\",\"type\":\"event\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"_price\",\"type\":\"uint256\"}],\"name\":\"changePlan\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"addresspayable\",\"name\":\"_to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"_weeks\",\"type\":\"uint256\"}],\"name\":\"subscribe\",\"outputs\":[],\"stateMutability\":\"payable\",\"type\":\"function\"}]",
+	Bin: "0x608060405260286000557371398cad63b47db2e2b00b68a709b64df98e5a29600160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550600160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff16600260006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550348015620000ce57600080fd5b506040516200108d3803806200108d8339818101604052810190620000f49190620001e8565b81600360006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555080600460006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555050506200022f565b600080fd5b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b6000620001b08262000183565b9050919050565b620001c281620001a3565b8114620001ce57600080fd5b50565b600081519050620001e281620001b7565b92915050565b600080604083850312156200020257620002016200017e565b5b60006200021285828601620001d1565b92505060206200022585828601620001d1565b9150509250929050565b610e4e806200023f6000396000f3fe6080604052600436106100295760003560e01c806305d567ca1461002e5780638de6928414610057575b600080fd5b34801561003a57600080fd5b5061005560048036038101906100509190610678565b610073565b005b610071600480360381019061006c9190610703565b6102b9565b005b60003373ffffffffffffffffffffffffffffffffffffffff1631116100cd576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016100c4906107a0565b60405180910390fd5b60008111610110576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161010790610832565b60405180910390fd5b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663dc42c074336040518263ffffffff1660e01b815260040161016b9190610873565b602060405180830381865afa158015610188573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906101ac91906108a3565b8114156101ee576040517f08c379a00000000000000000000000000000000000000000000000000000000081526004016101e590610942565b60405180910390fd5b600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663d822745c33836040518363ffffffff1660e01b815260040161024b929190610971565b600060405180830381600087803b15801561026557600080fd5b505af1158015610279573d6000803e3d6000fd5b505050507f7f9c6471d241fdd651ec01d49cde6243143db4bbf23aac6d0573bceb342e674e33826040516102ae929190610971565b60405180910390a150565b60004290506000600460009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663dc42c074856040518263ffffffff1660e01b815260040161031b91906109f9565b602060405180830381865afa158015610338573d6000803e3d6000fd5b505050506040513d601f19601f8201168201806040525081019061035c91906108a3565b9050600081116103a1576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161039890610a86565b60405180910390fd5b81600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16635b75dd8d86336040518363ffffffff1660e01b81526004016103ff929190610aa6565b608060405180830381865afa15801561041c573d6000803e3d6000fd5b505050506040513d601f19601f820116820180604052508101906104409190610bd8565b6040015110610484576040517f08c379a000000000000000000000000000000000000000000000000000000000815260040161047b90610c51565b60405180910390fd5b600360009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1663d5764858853384876040518563ffffffff1660e01b81526004016104e59493929190610c71565b600060405180830381600087803b1580156104ff57600080fd5b505af1158015610513573d6000803e3d6000fd5b505050507f7e70484266444fe9926cee86f5ca8c91acc579733e6c93081c0cbe7ab34877593385858460405161054c9493929190610cb6565b60405180910390a1600060646028346105659190610d2a565b61056f9190610db3565b9050600260009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc829081150290604051600060405180830381858888f193505050501580156105d9573d6000803e3d6000fd5b508473ffffffffffffffffffffffffffffffffffffffff166108fc82346106009190610de4565b9081150290604051600060405180830381858888f1935050505015801561062b573d6000803e3d6000fd5b505050505050565b6000604051905090565b600080fd5b6000819050919050565b61065581610642565b811461066057600080fd5b50565b6000813590506106728161064c565b92915050565b60006020828403121561068e5761068d61063d565b5b600061069c84828501610663565b91505092915050565b600073ffffffffffffffffffffffffffffffffffffffff82169050919050565b60006106d0826106a5565b9050919050565b6106e0816106c5565b81146106eb57600080fd5b50565b6000813590506106fd816106d7565b92915050565b6000806040838503121561071a5761071961063d565b5b6000610728858286016106ee565b925050602061073985828601610663565b9150509250929050565b600082825260208201905092915050565b7f42616c616e6365206973206e6f7420656e6f7567682e00000000000000000000600082015250565b600061078a601683610743565b915061079582610754565b602082019050919050565b600060208201905081810360008301526107b98161077d565b9050919050565b7f55534443207072696365206d75737420626520626967676572207468616e203060008201527f2e00000000000000000000000000000000000000000000000000000000000000602082015250565b600061081c602183610743565b9150610827826107c0565b604082019050919050565b6000602082019050818103600083015261084b8161080f565b9050919050565b600061085d826106a5565b9050919050565b61086d81610852565b82525050565b60006020820190506108886000830184610864565b92915050565b60008151905061089d8161064c565b92915050565b6000602082840312156108b9576108b861063d565b5b60006108c78482850161088e565b91505092915050565b7f55534443207072696365206d75737420626520646966666572656e742074686160008201527f6e2063757272656e74206f6e652e000000000000000000000000000000000000602082015250565b600061092c602e83610743565b9150610937826108d0565b604082019050919050565b6000602082019050818103600083015261095b8161091f565b9050919050565b61096b81610642565b82525050565b60006040820190506109866000830185610864565b6109936020830184610962565b9392505050565b6000819050919050565b60006109bf6109ba6109b5846106a5565b61099a565b6106a5565b9050919050565b60006109d1826109a4565b9050919050565b60006109e3826109c6565b9050919050565b6109f3816109d8565b82525050565b6000602082019050610a0e60008301846109ea565b92915050565b7f41646472657373206973206e6f7420616363657074696e67207375627363726960008201527f7074696f6e732e00000000000000000000000000000000000000000000000000602082015250565b6000610a70602783610743565b9150610a7b82610a14565b604082019050919050565b60006020820190508181036000830152610a9f81610a63565b9050919050565b6000604082019050610abb60008301856109ea565b610ac86020830184610864565b9392505050565b600080fd5b6000601f19601f8301169050919050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052604160045260246000fd5b610b1d82610ad4565b810181811067ffffffffffffffff82111715610b3c57610b3b610ae5565b5b80604052505050565b6000610b4f610633565b9050610b5b8282610b14565b919050565b600060808284031215610b7657610b75610acf565b5b610b806080610b45565b90506000610b908482850161088e565b6000830152506020610ba48482850161088e565b6020830152506040610bb88482850161088e565b6040830152506060610bcc8482850161088e565b60608301525092915050565b600060808284031215610bee57610bed61063d565b5b6000610bfc84828501610b60565b91505092915050565b7f546865726520697320612072756e6e696e6720737562736372697074696f6e00600082015250565b6000610c3b601f83610743565b9150610c4682610c05565b602082019050919050565b60006020820190508181036000830152610c6a81610c2e565b9050919050565b6000608082019050610c8660008301876109ea565b610c936020830186610864565b610ca06040830185610962565b610cad6060830184610962565b95945050505050565b6000608082019050610ccb6000830187610864565b610cd860208301866109ea565b610ce56040830185610962565b610cf26060830184610962565b95945050505050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601160045260246000fd5b6000610d3582610642565b9150610d4083610642565b9250817fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff0483118215151615610d7957610d78610cfb565b5b828202905092915050565b7f4e487b7100000000000000000000000000000000000000000000000000000000600052601260045260246000fd5b6000610dbe82610642565b9150610dc983610642565b925082610dd957610dd8610d84565b5b828204905092915050565b6000610def82610642565b9150610dfa83610642565b925082821015610e0d57610e0c610cfb565b5b82820390509291505056fea264697066735822122050d61df5e3a79cfd6c3826762054715a629aee8bb5d29a3a7cc621bed9d219d864736f6c634300080b0033",
 }
 
 // SubscriptionModelABI is the input ABI used to generate the binding from.
@@ -51,7 +43,7 @@ var SubscriptionModelABI = SubscriptionModelMetaData.ABI
 var SubscriptionModelBin = SubscriptionModelMetaData.Bin
 
 // DeploySubscriptionModel deploys a new Ethereum contract, binding an instance of SubscriptionModel to it.
-func DeploySubscriptionModel(auth *bind.TransactOpts, backend bind.ContractBackend) (common.Address, *types.Transaction, *SubscriptionModel, error) {
+func DeploySubscriptionModel(auth *bind.TransactOpts, backend bind.ContractBackend, _subscriptionStorageAddress common.Address, _planStorageAddress common.Address) (common.Address, *types.Transaction, *SubscriptionModel, error) {
 	parsed, err := SubscriptionModelMetaData.GetAbi()
 	if err != nil {
 		return common.Address{}, nil, nil, err
@@ -60,7 +52,7 @@ func DeploySubscriptionModel(auth *bind.TransactOpts, backend bind.ContractBacke
 		return common.Address{}, nil, nil, errors.New("GetABI returned nil")
 	}
 
-	address, tx, contract, err := bind.DeployContract(auth, *parsed, common.FromHex(SubscriptionModelBin), backend)
+	address, tx, contract, err := bind.DeployContract(auth, *parsed, common.FromHex(SubscriptionModelBin), backend, _subscriptionStorageAddress, _planStorageAddress)
 	if err != nil {
 		return common.Address{}, nil, nil, err
 	}
@@ -209,254 +201,316 @@ func (_SubscriptionModel *SubscriptionModelTransactorRaw) Transact(opts *bind.Tr
 	return _SubscriptionModel.Contract.contract.Transact(opts, method, params...)
 }
 
-// GetAllowedContract is a free data retrieval call binding the contract method 0x09225872.
+// ChangePlan is a paid mutator transaction binding the contract method 0x05d567ca.
 //
-// Solidity: function getAllowedContract() view returns(address)
-func (_SubscriptionModel *SubscriptionModelCaller) GetAllowedContract(opts *bind.CallOpts) (common.Address, error) {
-	var out []interface{}
-	err := _SubscriptionModel.contract.Call(opts, &out, "getAllowedContract")
+// Solidity: function changePlan(uint256 _price) returns()
+func (_SubscriptionModel *SubscriptionModelTransactor) ChangePlan(opts *bind.TransactOpts, _price *big.Int) (*types.Transaction, error) {
+	return _SubscriptionModel.contract.Transact(opts, "changePlan", _price)
+}
 
-	if err != nil {
-		return *new(common.Address), err
+// ChangePlan is a paid mutator transaction binding the contract method 0x05d567ca.
+//
+// Solidity: function changePlan(uint256 _price) returns()
+func (_SubscriptionModel *SubscriptionModelSession) ChangePlan(_price *big.Int) (*types.Transaction, error) {
+	return _SubscriptionModel.Contract.ChangePlan(&_SubscriptionModel.TransactOpts, _price)
+}
+
+// ChangePlan is a paid mutator transaction binding the contract method 0x05d567ca.
+//
+// Solidity: function changePlan(uint256 _price) returns()
+func (_SubscriptionModel *SubscriptionModelTransactorSession) ChangePlan(_price *big.Int) (*types.Transaction, error) {
+	return _SubscriptionModel.Contract.ChangePlan(&_SubscriptionModel.TransactOpts, _price)
+}
+
+// Subscribe is a paid mutator transaction binding the contract method 0x8de69284.
+//
+// Solidity: function subscribe(address _to, uint256 _weeks) payable returns()
+func (_SubscriptionModel *SubscriptionModelTransactor) Subscribe(opts *bind.TransactOpts, _to common.Address, _weeks *big.Int) (*types.Transaction, error) {
+	return _SubscriptionModel.contract.Transact(opts, "subscribe", _to, _weeks)
+}
+
+// Subscribe is a paid mutator transaction binding the contract method 0x8de69284.
+//
+// Solidity: function subscribe(address _to, uint256 _weeks) payable returns()
+func (_SubscriptionModel *SubscriptionModelSession) Subscribe(_to common.Address, _weeks *big.Int) (*types.Transaction, error) {
+	return _SubscriptionModel.Contract.Subscribe(&_SubscriptionModel.TransactOpts, _to, _weeks)
+}
+
+// Subscribe is a paid mutator transaction binding the contract method 0x8de69284.
+//
+// Solidity: function subscribe(address _to, uint256 _weeks) payable returns()
+func (_SubscriptionModel *SubscriptionModelTransactorSession) Subscribe(_to common.Address, _weeks *big.Int) (*types.Transaction, error) {
+	return _SubscriptionModel.Contract.Subscribe(&_SubscriptionModel.TransactOpts, _to, _weeks)
+}
+
+// SubscriptionModelChangePlanIterator is returned from FilterChangePlan and is used to iterate over the raw logs and unpacked data for ChangePlan events raised by the SubscriptionModel contract.
+type SubscriptionModelChangePlanIterator struct {
+	Event *SubscriptionModelChangePlan // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
+}
+
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *SubscriptionModelChangePlanIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
 	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(SubscriptionModelChangePlan)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
 
-	out0 := *abi.ConvertType(out[0], new(common.Address)).(*common.Address)
-
-	return out0, err
-
-}
-
-// GetAllowedContract is a free data retrieval call binding the contract method 0x09225872.
-//
-// Solidity: function getAllowedContract() view returns(address)
-func (_SubscriptionModel *SubscriptionModelSession) GetAllowedContract() (common.Address, error) {
-	return _SubscriptionModel.Contract.GetAllowedContract(&_SubscriptionModel.CallOpts)
-}
-
-// GetAllowedContract is a free data retrieval call binding the contract method 0x09225872.
-//
-// Solidity: function getAllowedContract() view returns(address)
-func (_SubscriptionModel *SubscriptionModelCallerSession) GetAllowedContract() (common.Address, error) {
-	return _SubscriptionModel.Contract.GetAllowedContract(&_SubscriptionModel.CallOpts)
-}
-
-// GetCountSubscriptionsBySubscriptor is a free data retrieval call binding the contract method 0x9974db86.
-//
-// Solidity: function getCountSubscriptionsBySubscriptor(address _from) view returns(uint256)
-func (_SubscriptionModel *SubscriptionModelCaller) GetCountSubscriptionsBySubscriptor(opts *bind.CallOpts, _from common.Address) (*big.Int, error) {
-	var out []interface{}
-	err := _SubscriptionModel.contract.Call(opts, &out, "getCountSubscriptionsBySubscriptor", _from)
-
-	if err != nil {
-		return *new(*big.Int), err
+		default:
+			return false
+		}
 	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(SubscriptionModelChangePlan)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
 
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
-}
-
-// GetCountSubscriptionsBySubscriptor is a free data retrieval call binding the contract method 0x9974db86.
-//
-// Solidity: function getCountSubscriptionsBySubscriptor(address _from) view returns(uint256)
-func (_SubscriptionModel *SubscriptionModelSession) GetCountSubscriptionsBySubscriptor(_from common.Address) (*big.Int, error) {
-	return _SubscriptionModel.Contract.GetCountSubscriptionsBySubscriptor(&_SubscriptionModel.CallOpts, _from)
-}
-
-// GetCountSubscriptionsBySubscriptor is a free data retrieval call binding the contract method 0x9974db86.
-//
-// Solidity: function getCountSubscriptionsBySubscriptor(address _from) view returns(uint256)
-func (_SubscriptionModel *SubscriptionModelCallerSession) GetCountSubscriptionsBySubscriptor(_from common.Address) (*big.Int, error) {
-	return _SubscriptionModel.Contract.GetCountSubscriptionsBySubscriptor(&_SubscriptionModel.CallOpts, _from)
-}
-
-// GetSubscription is a free data retrieval call binding the contract method 0x5b75dd8d.
-//
-// Solidity: function getSubscription(address _from, address _to) view returns((uint256,uint256,uint256,uint256))
-func (_SubscriptionModel *SubscriptionModelCaller) GetSubscription(opts *bind.CallOpts, _from common.Address, _to common.Address) (SubscriptionsStorageSubscription, error) {
-	var out []interface{}
-	err := _SubscriptionModel.contract.Call(opts, &out, "getSubscription", _from, _to)
-
-	if err != nil {
-		return *new(SubscriptionsStorageSubscription), err
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
 	}
-
-	out0 := *abi.ConvertType(out[0], new(SubscriptionsStorageSubscription)).(*SubscriptionsStorageSubscription)
-
-	return out0, err
-
 }
 
-// GetSubscription is a free data retrieval call binding the contract method 0x5b75dd8d.
-//
-// Solidity: function getSubscription(address _from, address _to) view returns((uint256,uint256,uint256,uint256))
-func (_SubscriptionModel *SubscriptionModelSession) GetSubscription(_from common.Address, _to common.Address) (SubscriptionsStorageSubscription, error) {
-	return _SubscriptionModel.Contract.GetSubscription(&_SubscriptionModel.CallOpts, _from, _to)
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *SubscriptionModelChangePlanIterator) Error() error {
+	return it.fail
 }
 
-// GetSubscription is a free data retrieval call binding the contract method 0x5b75dd8d.
-//
-// Solidity: function getSubscription(address _from, address _to) view returns((uint256,uint256,uint256,uint256))
-func (_SubscriptionModel *SubscriptionModelCallerSession) GetSubscription(_from common.Address, _to common.Address) (SubscriptionsStorageSubscription, error) {
-	return _SubscriptionModel.Contract.GetSubscription(&_SubscriptionModel.CallOpts, _from, _to)
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *SubscriptionModelChangePlanIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
 }
 
-// GetSubscriptors is a free data retrieval call binding the contract method 0xc958a0a6.
-//
-// Solidity: function getSubscriptors() view returns(address[])
-func (_SubscriptionModel *SubscriptionModelCaller) GetSubscriptors(opts *bind.CallOpts) ([]common.Address, error) {
-	var out []interface{}
-	err := _SubscriptionModel.contract.Call(opts, &out, "getSubscriptors")
+// SubscriptionModelChangePlan represents a ChangePlan event raised by the SubscriptionModel contract.
+type SubscriptionModelChangePlan struct {
+	Sender common.Address
+	Value  *big.Int
+	Raw    types.Log // Blockchain specific contextual infos
+}
 
+// FilterChangePlan is a free log retrieval operation binding the contract event 0x7f9c6471d241fdd651ec01d49cde6243143db4bbf23aac6d0573bceb342e674e.
+//
+// Solidity: event ChangePlan(address sender, uint256 value)
+func (_SubscriptionModel *SubscriptionModelFilterer) FilterChangePlan(opts *bind.FilterOpts) (*SubscriptionModelChangePlanIterator, error) {
+
+	logs, sub, err := _SubscriptionModel.contract.FilterLogs(opts, "ChangePlan")
 	if err != nil {
-		return *new([]common.Address), err
+		return nil, err
 	}
-
-	out0 := *abi.ConvertType(out[0], new([]common.Address)).(*[]common.Address)
-
-	return out0, err
-
+	return &SubscriptionModelChangePlanIterator{contract: _SubscriptionModel.contract, event: "ChangePlan", logs: logs, sub: sub}, nil
 }
 
-// GetSubscriptors is a free data retrieval call binding the contract method 0xc958a0a6.
+// WatchChangePlan is a free log subscription operation binding the contract event 0x7f9c6471d241fdd651ec01d49cde6243143db4bbf23aac6d0573bceb342e674e.
 //
-// Solidity: function getSubscriptors() view returns(address[])
-func (_SubscriptionModel *SubscriptionModelSession) GetSubscriptors() ([]common.Address, error) {
-	return _SubscriptionModel.Contract.GetSubscriptors(&_SubscriptionModel.CallOpts)
-}
+// Solidity: event ChangePlan(address sender, uint256 value)
+func (_SubscriptionModel *SubscriptionModelFilterer) WatchChangePlan(opts *bind.WatchOpts, sink chan<- *SubscriptionModelChangePlan) (event.Subscription, error) {
 
-// GetSubscriptors is a free data retrieval call binding the contract method 0xc958a0a6.
-//
-// Solidity: function getSubscriptors() view returns(address[])
-func (_SubscriptionModel *SubscriptionModelCallerSession) GetSubscriptors() ([]common.Address, error) {
-	return _SubscriptionModel.Contract.GetSubscriptors(&_SubscriptionModel.CallOpts)
-}
-
-// SizeSubscriptions is a free data retrieval call binding the contract method 0x0119cbb4.
-//
-// Solidity: function sizeSubscriptions() view returns(uint256)
-func (_SubscriptionModel *SubscriptionModelCaller) SizeSubscriptions(opts *bind.CallOpts) (*big.Int, error) {
-	var out []interface{}
-	err := _SubscriptionModel.contract.Call(opts, &out, "sizeSubscriptions")
-
+	logs, sub, err := _SubscriptionModel.contract.WatchLogs(opts, "ChangePlan")
 	if err != nil {
-		return *new(*big.Int), err
+		return nil, err
 	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(SubscriptionModelChangePlan)
+				if err := _SubscriptionModel.contract.UnpackLog(event, "ChangePlan", log); err != nil {
+					return err
+				}
+				event.Raw = log
 
-	out0 := *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-
-	return out0, err
-
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
 }
 
-// SizeSubscriptions is a free data retrieval call binding the contract method 0x0119cbb4.
+// ParseChangePlan is a log parse operation binding the contract event 0x7f9c6471d241fdd651ec01d49cde6243143db4bbf23aac6d0573bceb342e674e.
 //
-// Solidity: function sizeSubscriptions() view returns(uint256)
-func (_SubscriptionModel *SubscriptionModelSession) SizeSubscriptions() (*big.Int, error) {
-	return _SubscriptionModel.Contract.SizeSubscriptions(&_SubscriptionModel.CallOpts)
+// Solidity: event ChangePlan(address sender, uint256 value)
+func (_SubscriptionModel *SubscriptionModelFilterer) ParseChangePlan(log types.Log) (*SubscriptionModelChangePlan, error) {
+	event := new(SubscriptionModelChangePlan)
+	if err := _SubscriptionModel.contract.UnpackLog(event, "ChangePlan", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
 }
 
-// SizeSubscriptions is a free data retrieval call binding the contract method 0x0119cbb4.
-//
-// Solidity: function sizeSubscriptions() view returns(uint256)
-func (_SubscriptionModel *SubscriptionModelCallerSession) SizeSubscriptions() (*big.Int, error) {
-	return _SubscriptionModel.Contract.SizeSubscriptions(&_SubscriptionModel.CallOpts)
+// SubscriptionModelSubscribeIterator is returned from FilterSubscribe and is used to iterate over the raw logs and unpacked data for Subscribe events raised by the SubscriptionModel contract.
+type SubscriptionModelSubscribeIterator struct {
+	Event *SubscriptionModelSubscribe // Event containing the contract specifics and raw log
+
+	contract *bind.BoundContract // Generic contract to use for unpacking event data
+	event    string              // Event name to use for unpacking event data
+
+	logs chan types.Log        // Log channel receiving the found contract events
+	sub  ethereum.Subscription // Subscription for errors, completion and termination
+	done bool                  // Whether the subscription completed delivering logs
+	fail error                 // Occurred error to stop iteration
 }
 
-// Subscriptions is a free data retrieval call binding the contract method 0x6207d31b.
-//
-// Solidity: function subscriptions(address , address ) view returns(uint256 Index, uint256 Createdat, uint256 Endedat, uint256 Amount)
-func (_SubscriptionModel *SubscriptionModelCaller) Subscriptions(opts *bind.CallOpts, arg0 common.Address, arg1 common.Address) (struct {
-	Index     *big.Int
-	Createdat *big.Int
-	Endedat   *big.Int
-	Amount    *big.Int
-}, error) {
-	var out []interface{}
-	err := _SubscriptionModel.contract.Call(opts, &out, "subscriptions", arg0, arg1)
+// Next advances the iterator to the subsequent event, returning whether there
+// are any more events found. In case of a retrieval or parsing error, false is
+// returned and Error() can be queried for the exact failure.
+func (it *SubscriptionModelSubscribeIterator) Next() bool {
+	// If the iterator failed, stop iterating
+	if it.fail != nil {
+		return false
+	}
+	// If the iterator completed, deliver directly whatever's available
+	if it.done {
+		select {
+		case log := <-it.logs:
+			it.Event = new(SubscriptionModelSubscribe)
+			if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+				it.fail = err
+				return false
+			}
+			it.Event.Raw = log
+			return true
 
-	outstruct := new(struct {
-		Index     *big.Int
-		Createdat *big.Int
-		Endedat   *big.Int
-		Amount    *big.Int
-	})
+		default:
+			return false
+		}
+	}
+	// Iterator still in progress, wait for either a data or an error event
+	select {
+	case log := <-it.logs:
+		it.Event = new(SubscriptionModelSubscribe)
+		if err := it.contract.UnpackLog(it.Event, it.event, log); err != nil {
+			it.fail = err
+			return false
+		}
+		it.Event.Raw = log
+		return true
+
+	case err := <-it.sub.Err():
+		it.done = true
+		it.fail = err
+		return it.Next()
+	}
+}
+
+// Error returns any retrieval or parsing error occurred during filtering.
+func (it *SubscriptionModelSubscribeIterator) Error() error {
+	return it.fail
+}
+
+// Close terminates the iteration process, releasing any pending underlying
+// resources.
+func (it *SubscriptionModelSubscribeIterator) Close() error {
+	it.sub.Unsubscribe()
+	return nil
+}
+
+// SubscriptionModelSubscribe represents a Subscribe event raised by the SubscriptionModel contract.
+type SubscriptionModelSubscribe struct {
+	Sender common.Address
+	To     common.Address
+	Weeks  *big.Int
+	Amount *big.Int
+	Raw    types.Log // Blockchain specific contextual infos
+}
+
+// FilterSubscribe is a free log retrieval operation binding the contract event 0x7e70484266444fe9926cee86f5ca8c91acc579733e6c93081c0cbe7ab3487759.
+//
+// Solidity: event Subscribe(address sender, address to, uint256 _weeks, uint256 amount)
+func (_SubscriptionModel *SubscriptionModelFilterer) FilterSubscribe(opts *bind.FilterOpts) (*SubscriptionModelSubscribeIterator, error) {
+
+	logs, sub, err := _SubscriptionModel.contract.FilterLogs(opts, "Subscribe")
 	if err != nil {
-		return *outstruct, err
+		return nil, err
 	}
-
-	outstruct.Index = *abi.ConvertType(out[0], new(*big.Int)).(**big.Int)
-	outstruct.Createdat = *abi.ConvertType(out[1], new(*big.Int)).(**big.Int)
-	outstruct.Endedat = *abi.ConvertType(out[2], new(*big.Int)).(**big.Int)
-	outstruct.Amount = *abi.ConvertType(out[3], new(*big.Int)).(**big.Int)
-
-	return *outstruct, err
-
+	return &SubscriptionModelSubscribeIterator{contract: _SubscriptionModel.contract, event: "Subscribe", logs: logs, sub: sub}, nil
 }
 
-// Subscriptions is a free data retrieval call binding the contract method 0x6207d31b.
+// WatchSubscribe is a free log subscription operation binding the contract event 0x7e70484266444fe9926cee86f5ca8c91acc579733e6c93081c0cbe7ab3487759.
 //
-// Solidity: function subscriptions(address , address ) view returns(uint256 Index, uint256 Createdat, uint256 Endedat, uint256 Amount)
-func (_SubscriptionModel *SubscriptionModelSession) Subscriptions(arg0 common.Address, arg1 common.Address) (struct {
-	Index     *big.Int
-	Createdat *big.Int
-	Endedat   *big.Int
-	Amount    *big.Int
-}, error) {
-	return _SubscriptionModel.Contract.Subscriptions(&_SubscriptionModel.CallOpts, arg0, arg1)
+// Solidity: event Subscribe(address sender, address to, uint256 _weeks, uint256 amount)
+func (_SubscriptionModel *SubscriptionModelFilterer) WatchSubscribe(opts *bind.WatchOpts, sink chan<- *SubscriptionModelSubscribe) (event.Subscription, error) {
+
+	logs, sub, err := _SubscriptionModel.contract.WatchLogs(opts, "Subscribe")
+	if err != nil {
+		return nil, err
+	}
+	return event.NewSubscription(func(quit <-chan struct{}) error {
+		defer sub.Unsubscribe()
+		for {
+			select {
+			case log := <-logs:
+				// New log arrived, parse the event and forward to the user
+				event := new(SubscriptionModelSubscribe)
+				if err := _SubscriptionModel.contract.UnpackLog(event, "Subscribe", log); err != nil {
+					return err
+				}
+				event.Raw = log
+
+				select {
+				case sink <- event:
+				case err := <-sub.Err():
+					return err
+				case <-quit:
+					return nil
+				}
+			case err := <-sub.Err():
+				return err
+			case <-quit:
+				return nil
+			}
+		}
+	}), nil
 }
 
-// Subscriptions is a free data retrieval call binding the contract method 0x6207d31b.
+// ParseSubscribe is a log parse operation binding the contract event 0x7e70484266444fe9926cee86f5ca8c91acc579733e6c93081c0cbe7ab3487759.
 //
-// Solidity: function subscriptions(address , address ) view returns(uint256 Index, uint256 Createdat, uint256 Endedat, uint256 Amount)
-func (_SubscriptionModel *SubscriptionModelCallerSession) Subscriptions(arg0 common.Address, arg1 common.Address) (struct {
-	Index     *big.Int
-	Createdat *big.Int
-	Endedat   *big.Int
-	Amount    *big.Int
-}, error) {
-	return _SubscriptionModel.Contract.Subscriptions(&_SubscriptionModel.CallOpts, arg0, arg1)
-}
-
-// AddSubscription is a paid mutator transaction binding the contract method 0xd5764858.
-//
-// Solidity: function addSubscription(address _from, address _to, uint256 _amount, uint256 _weeks) returns()
-func (_SubscriptionModel *SubscriptionModelTransactor) AddSubscription(opts *bind.TransactOpts, _from common.Address, _to common.Address, _amount *big.Int, _weeks *big.Int) (*types.Transaction, error) {
-	return _SubscriptionModel.contract.Transact(opts, "addSubscription", _from, _to, _amount, _weeks)
-}
-
-// AddSubscription is a paid mutator transaction binding the contract method 0xd5764858.
-//
-// Solidity: function addSubscription(address _from, address _to, uint256 _amount, uint256 _weeks) returns()
-func (_SubscriptionModel *SubscriptionModelSession) AddSubscription(_from common.Address, _to common.Address, _amount *big.Int, _weeks *big.Int) (*types.Transaction, error) {
-	return _SubscriptionModel.Contract.AddSubscription(&_SubscriptionModel.TransactOpts, _from, _to, _amount, _weeks)
-}
-
-// AddSubscription is a paid mutator transaction binding the contract method 0xd5764858.
-//
-// Solidity: function addSubscription(address _from, address _to, uint256 _amount, uint256 _weeks) returns()
-func (_SubscriptionModel *SubscriptionModelTransactorSession) AddSubscription(_from common.Address, _to common.Address, _amount *big.Int, _weeks *big.Int) (*types.Transaction, error) {
-	return _SubscriptionModel.Contract.AddSubscription(&_SubscriptionModel.TransactOpts, _from, _to, _amount, _weeks)
-}
-
-// UpdateAllowedContract is a paid mutator transaction binding the contract method 0xc72adad8.
-//
-// Solidity: function updateAllowedContract(address _key) returns()
-func (_SubscriptionModel *SubscriptionModelTransactor) UpdateAllowedContract(opts *bind.TransactOpts, _key common.Address) (*types.Transaction, error) {
-	return _SubscriptionModel.contract.Transact(opts, "updateAllowedContract", _key)
-}
-
-// UpdateAllowedContract is a paid mutator transaction binding the contract method 0xc72adad8.
-//
-// Solidity: function updateAllowedContract(address _key) returns()
-func (_SubscriptionModel *SubscriptionModelSession) UpdateAllowedContract(_key common.Address) (*types.Transaction, error) {
-	return _SubscriptionModel.Contract.UpdateAllowedContract(&_SubscriptionModel.TransactOpts, _key)
-}
-
-// UpdateAllowedContract is a paid mutator transaction binding the contract method 0xc72adad8.
-//
-// Solidity: function updateAllowedContract(address _key) returns()
-func (_SubscriptionModel *SubscriptionModelTransactorSession) UpdateAllowedContract(_key common.Address) (*types.Transaction, error) {
-	return _SubscriptionModel.Contract.UpdateAllowedContract(&_SubscriptionModel.TransactOpts, _key)
+// Solidity: event Subscribe(address sender, address to, uint256 _weeks, uint256 amount)
+func (_SubscriptionModel *SubscriptionModelFilterer) ParseSubscribe(log types.Log) (*SubscriptionModelSubscribe, error) {
+	event := new(SubscriptionModelSubscribe)
+	if err := _SubscriptionModel.contract.UnpackLog(event, "Subscribe", log); err != nil {
+		return nil, err
+	}
+	event.Raw = log
+	return event, nil
 }

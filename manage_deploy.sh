@@ -8,6 +8,7 @@ mv contracts_PlansStorage_sol_PlansStorage.abi ./abi/PlansStorage.abi
 mv contracts_PlansStorage_sol_PlansStorage.bin ./bin/PlansStorage.bin
 rm PlansStorage.abi PlansStorage.bin
 abigen --bin=./bin/PlansStorage.bin --abi=./abi/PlansStorage.abi --pkg=plansStorage --out=./golang/ContractPlansStorage.go
+sed -i '4s/.*/package main/' ./golang/ContractPlansStorage.go
 cp ./golang/ContractPlansStorage.go /home/dolphin/Code/TradingLab/WebBack
 
 echo "Processing SubscriptionStorage"
@@ -17,6 +18,7 @@ mv contracts_SubscriptionsStorage_sol_SubscriptionsStorage.abi ./abi/Subscriptio
 mv contracts_SubscriptionsStorage_sol_SubscriptionsStorage.bin ./bin/SubscriptionsStorage.bin
 rm SubscriptionsStorage.abi SubscriptionsStorage.bin
 abigen --bin=./bin/SubscriptionsStorage.bin --abi=./abi/SubscriptionsStorage.abi --pkg=subscriptionsStorage --out=./golang/ContractSubscriptionsStorage.go
+sed -i '4s/.*/package main/' ./golang/ContractSubscriptionsStorage.go
 cp ./golang/ContractSubscriptionsStorage.go /home/dolphin/Code/TradingLab/WebBack
 
 echo "Processing SubscriptionModel"
@@ -25,7 +27,12 @@ solcjs --bin contracts/SubscriptionModel.sol > SubscriptionModel.bin
 mv contracts_SubscriptionModel_sol_SubscriptionModel.abi ./abi/SubscriptionModel.abi
 mv contracts_SubscriptionModel_sol_SubscriptionModel.bin ./bin/SubscriptionModel.bin
 rm SubscriptionModel.abi SubscriptionModel.bin
-abigen --bin=./bin/SubscriptionsStorage.bin --abi=./abi/SubscriptionsStorage.abi --pkg=subscriptionModel --out=./golang/ContractSubscriptionModel.go
+abigen --bin=./bin/SubscriptionModel.bin --abi=./abi/SubscriptionModel.abi --pkg=subscriptionModel --out=./golang/ContractSubscriptionModel.go
+sed -i '4s/.*/package main/' ./golang/ContractSubscriptionModel.go
 cp ./golang/ContractSubscriptionModel.go /home/dolphin/Code/TradingLab/WebBack
 
+echo "Processing frontend"
+cp build/contracts/SubscriptionModel.json $HOME/Code/TradingLab/WebFront/src/functions
+
 rm -rf contracts_*
+
