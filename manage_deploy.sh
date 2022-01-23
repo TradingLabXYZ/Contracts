@@ -36,7 +36,7 @@ cp build/contracts/SubscriptionModel.json $HOME/Code/TradingLab/WebFront/src/fun
 
 CONTRACT_ADDRESS=$(jq '.networks."1281".address' $HOME/Code/TradingLab/Contracts/build/contracts/SubscriptionModel.json)
 CONTRACT_ADDRESS="${CONTRACT_ADDRESS//\"/}"
-sed -i "s/^export CONTRACT.*$/export CONTRACT=$CONTRACT_ADDRESS/g" $HOME/Code/TradingLab/WebBack/set_env_variables.sh
+sed -i "s/^export CONTRACT.*$/export CONTRACT_SUBSCRIPTION=$CONTRACT_ADDRESS/g" $HOME/Code/TradingLab/WebBack/set_env_variables.sh
 
 rm -rf contracts_*
 
