@@ -67,7 +67,7 @@ contract PlansStorage {
   }
 
   // CALLS
-  function sizePlans() public onAllow view returns (uint) {
+  function getSizePlans() public onAllow view returns (uint) {
     return uint(keyList.length);
   }
 
