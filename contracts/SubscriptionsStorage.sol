@@ -70,7 +70,7 @@ contract SubscriptionsStorage {
   }
 
   // CALLS
-  function sizeSubscriptions() public onAllow view returns (uint) {
+  function getSizeSubscriptions() public onAllow view returns (uint) {
     return uint(keyList.length);
   }
 

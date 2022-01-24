@@ -37,10 +37,6 @@ contract SubscriptionModel {
   // TRANSACTIONS
   function changePlan(uint _price) public {
     require(
-      msg.sender.balance > 0,
-      "Balance is not enough."
-    );
-    require(
       _price > 0, 
       "USDC price must be bigger than 0."
     );
@@ -59,8 +55,16 @@ contract SubscriptionModel {
     uint currentTimestamp = block.timestamp;
     uint plan = iPlans.getPlanByAddress(_to);
     require(
+      msg.sender != _to,
+      "Subscriber and subscriptor must be different."
+    );
+    require(
       plan > 0,
       "Address is not accepting subscriptions."
+    );
+    require(
+      _weeks > 0,
+      "Weeks must be greater than 0."
     );
     require(
       iSub.getSubscription(
