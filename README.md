@@ -4,7 +4,7 @@ TODO: explain the process in details
 
 ## To run a moonbeam blockchain instance
 
-'''shell
+```shell
 
 truffle unbox PureStake/moonbeam-truffle-box
 
@@ -14,12 +14,12 @@ truffle run moonbeam start
 
 docker logs -f <container_id>
 
-'''
+```
 
 ## To deploy and update BackEnd and Fronend
 
-'''shell
+```shell
 
 ./manage_deploy.sh
 
-'''
+```
