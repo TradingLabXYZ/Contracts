@@ -1,15 +1,28 @@
-# TO DO Useful commands
+# Useful commands
+
+TODO: explain the process in details
+
+'''shell
 
 truffle unbox PureStake/moonbeam-truffle-box
 
-systemctl stop docker
+systemctl stop docker && systemctl start docker
 
-systemctl start docker
-
-sudo docker run --rm --name moonbeam_development --network host purestake/moonbeam:v0.13.2 --dev
+truffle run moonbeam start
 
 truffle console --network dev
 
 truffle migrate --network dev --reset
 
-cp build/contracts/Subscription.json $HOME/Code/TradingLab/WebFront/src/functions
+truffle run abigen Subscription
+
+node scripts/extract_events.js
+```
+
+IMPORTANT:
+remember to copy:
+
+JSON --> to backend
+JSON --> to frontend
+ABIGEN --> to backend
+events --> to backend
