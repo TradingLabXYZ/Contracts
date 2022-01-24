@@ -3,7 +3,7 @@ pragma solidity ^0.8.7;
 
 contract SubscriptionsStorage {
 
-  // STRUCTS
+  // STRUCT
   struct Subscription {
     uint Index;
     uint Createdat;
