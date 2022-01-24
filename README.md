@@ -2,6 +2,8 @@
 
 TODO: explain the process in details
 
+## To run a moonbeam blockchain instance
+
 '''shell
 
 truffle unbox PureStake/moonbeam-truffle-box
@@ -10,19 +12,14 @@ systemctl stop docker && systemctl start docker
 
 truffle run moonbeam start
 
-truffle console --network dev
+docker logs -f <container_id>
 
-truffle migrate --network dev --reset
+'''
 
-truffle run abigen Subscription
+## To deploy and update BackEnd and Fronend
 
-node scripts/extract_events.js
-```
+'''shell
 
-IMPORTANT:
-remember to copy:
+./manage_deploy.sh
 
-JSON --> to backend
-JSON --> to frontend
-ABIGEN --> to backend
-events --> to backend
+'''
