@@ -3,13 +3,15 @@ var PlansStorage = artifacts.require("PlansStorage");
 var SubscriptionModel = artifacts.require("SubscriptionModel");
 
 module.exports = async function(deployer, network, accounts) {
-  let instanceSS = await deployer.deploy(SubscriptionsStorage);
-  let instancePS = await deployer.deploy(PlansStorage);
-  let instanceSM = await deployer.deploy(
+  await deployer.deploy(SubscriptionsStorage);
+  await deployer.deploy(PlansStorage);
+  await deployer.deploy(
     SubscriptionModel,
     SubscriptionsStorage.address,
     PlansStorage.address
   );
-  instanceSS.updateAllowedContract(instanceSM.address);
-  instancePS.updateAllowedContract(instanceSM.address);
+  var sSt = await SubscriptionsStorage.deployed();
+  sSt.updateAllowedContract(SubscriptionModel.address);
+  var pSt = await PlansStorage.deployed();
+  pSt.updateAllowedContract(SubscriptionModel.address);
 };
