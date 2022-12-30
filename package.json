@@ -12,7 +12,7 @@
       "truffle-typings": "^1.0.8"
    },
    "devDependencies": {
-      "truffle": "^5.4.26",
+      "truffle": "^5.7.1",
       "truffle-plugin-verify": "^0.5.21"
    }
 }
